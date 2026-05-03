@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vijayalakshmikarthikeyan — AI Product Builder & Security Researcher</title>
+<meta name="description" content="Vijayalakshmikarthikeyan — Building AI products that are resilient, compliant, and enterprise-ready. 12+ years across Informatica, Alteryx, MSD.">
+<!-- ANALYTICS: Sign up free at tinylytics.app → get Site ID → uncomment line below and replace YOUR_SITE_ID -->
+<!-- <script src="https://tinylytics.app/embed/YOUR_SITE_ID.js" defer></script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c14;--bg2:#0d1320;--bg3:#111827;--border:rgba(99,179,255,0.12);--accent:#3b9eff;--accent2:#00f5c4;--accent3:#f59e42;--text:#e8edf5;--muted:#7a8ba3;--card:rgba(255,255,255,0.035);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
+img{pointer-events:none;-webkit-user-drag:none;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4;}
+.blob{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;opacity:0.22;}
+.blob-1{width:500px;height:500px;background:#1a4b8a;top:-100px;left:-150px;}
+.blob-2{width:400px;height:400px;background:#0a4040;bottom:20%;right:-100px;}
+.blob-3{width:300px;height:300px;background:#2a1a6a;top:50%;left:40%;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;position:relative;z-index:1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 0;background:rgba(8,12,20,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+nav .inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
+.nav-logo span{color:var(--accent);}
+nav ul{list-style:none;display:flex;gap:2rem;}
+nav ul a{font-family:'DM Mono',monospace;font-size:0.73rem;color:var(--muted);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+nav ul a:hover{color:var(--accent);}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:6px;font-family:'DM Mono',monospace;font-size:0.78rem;letter-spacing:0.05em;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none;}
+.btn-primary{background:var(--accent);color:#000;font-weight:600;}
+.btn-primary:hover{background:#60b5ff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,158,255,0.35);}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center;}
+.hero-tag{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--accent2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.7rem;}
+.hero-tag::before{content:'';display:block;width:26px;height:1px;background:var(--accent2);}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,4.2vw,3.8rem);line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:0.98rem;color:var(--muted);max-width:490px;margin-bottom:2.5rem;line-height:1.85;}
+.hero-sub strong{color:var(--text);font-weight:600;}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;padding:2rem;display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;overflow:hidden;}
+.hero-card::after{content:'vijayalakshmikarthikeyan.github.io';position:absolute;bottom:0;left:0;right:0;padding:0.45rem;text-align:center;font-family:'DM Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.08);background:rgba(59,158,255,0.04);border-top:1px solid var(--border);letter-spacing:0.05em;}
+.avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--bg3) 0%,#1a2744 100%);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);box-shadow:0 0 35px rgba(59,158,255,0.2);}
+.card-name{font-family:'DM Serif Display',serif;font-size:1.05rem;text-align:center;line-height:1.3;}
+.card-role{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--accent2);letter-spacing:0.1em;text-align:center;line-height:1.6;}
+.status{display:flex;align-items:center;gap:0.5rem;font-family:'DM Mono',monospace;font-size:0.65rem;color:#22c55e;}
+.status::before{content:'';width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 1.8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4);}50%{box-shadow:0 0 0 6px rgba(34,197,94,0);}}
+.stats-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 0;margin-bottom:5rem;background:var(--bg2);}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--accent);display:block;}
+.stat-label{font-family:'DM Mono',monospace;font-size:0.66rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+section{padding:5rem 0;}
+.section-label{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);max-width:60px;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-0.02em;margin-bottom:3rem;line-height:1.2;}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(59,158,255,0.3);box-shadow:0 16px 48px rgba(0,0,0,0.4);}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s;}
+.project-card:hover::before{opacity:1;}
+.project-card::after{content:'© vijayalakshmikarthikeyan';position:absolute;bottom:8px;right:10px;font-family:'DM Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.05);letter-spacing:0.06em;pointer-events:none;}
+.project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.badge{display:inline-block;padding:0.26rem 0.7rem;border-radius:4px;font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.07em;margin-bottom:1rem;}
+.badge-blue{background:rgba(59,158,255,0.1);border:1px solid rgba(59,158,255,0.2);color:var(--accent);}
+.badge-green{background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.2);color:var(--accent2);}
+.badge-amber{background:rgba(245,158,66,0.1);border:1px solid rgba(245,158,66,0.2);color:var(--accent3);}
+.project-title{font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:0.7rem;color:var(--text);}
+.project-problem{font-size:0.81rem;color:var(--muted);margin-bottom:1rem;line-height:1.75;}
+.project-impact{font-size:0.78rem;color:var(--accent2);font-family:'DM Mono',monospace;padding:0.5rem 0.75rem;background:rgba(0,245,196,0.06);border-left:2px solid var(--accent2);border-radius:0 4px 4px 0;margin-bottom:1.2rem;line-height:1.6;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.32rem;margin-bottom:1.2rem;}
+.tag{padding:0.2rem 0.52rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--muted);}
+.btn-demo{display:inline-flex;align-items:center;gap:0.4rem;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);text-decoration:none;letter-spacing:0.05em;border:1px solid rgba(59,158,255,0.25);padding:0.42rem 0.85rem;border-radius:5px;transition:all 0.2s;}
+.btn-demo:hover{background:rgba(59,158,255,0.08);border-color:var(--accent);}
+.project-visual{background:linear-gradient(135deg,var(--bg3) 0%,#0a1628 100%);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:180px;overflow:hidden;}
+.timeline{position:relative;padding-left:1.5rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent) 0%,var(--accent2) 60%,transparent 100%);}
+.tl-item{position:relative;padding-bottom:2.5rem;padding-left:2rem;}
+.tl-item::before{content:'';position:absolute;left:-2.3rem;top:0.35rem;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 10px rgba(59,158,255,0.5);}
+.tl-date{font-family:'DM Mono',monospace;font-size:0.66rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.3rem;}
+.tl-role{font-family:'DM Serif Display',serif;font-size:1.12rem;color:var(--text);margin-bottom:0.15rem;}
+.tl-company{font-size:0.8rem;color:var(--muted);margin-bottom:0.7rem;}
+.tl-bullets{list-style:none;}
+.tl-bullets li{font-size:0.81rem;color:var(--muted);padding:0.18rem 0 0.18rem 1rem;position:relative;}
+.tl-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent2);font-size:0.66rem;}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.skill-group{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.skill-group-title{font-family:'DM Mono',monospace;font-size:0.66rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem;}
+.skill-pills{display:flex;flex-wrap:wrap;gap:0.38rem;}
+.pill{padding:0.26rem 0.62rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:100px;font-size:0.74rem;color:var(--text);}
+.analytics-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;}
+.analytics-card::before{content:'◈ LIVE ANALYTICS';position:absolute;top:1rem;right:1.5rem;font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--accent2);letter-spacing:0.12em;}
+.an-num{font-family:'DM Serif Display',serif;font-size:2.3rem;color:var(--accent);display:block;line-height:1;margin-bottom:0.3rem;}
+.an-label{font-family:'DM Mono',monospace;font-size:0.64rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.an-note{grid-column:1/-1;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);border-top:1px solid var(--border);padding-top:1.2rem;line-height:1.75;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-h{font-family:'DM Serif Display',serif;font-size:1.85rem;margin-bottom:1rem;letter-spacing:-0.02em;}
+.contact-p{color:var(--muted);font-size:0.9rem;line-height:1.85;margin-bottom:1.8rem;}
+.contact-links{display:flex;flex-direction:column;gap:0.7rem;}
+.clink{display:flex;align-items:center;gap:0.8rem;color:var(--muted);text-decoration:none;font-size:0.86rem;transition:color 0.2s;}
+.clink:hover{color:var(--accent);}
+.clink span{color:var(--accent);font-family:'DM Mono',monospace;font-size:0.68rem;min-width:70px;}
+.open-badge{display:inline-flex;align-items:center;gap:0.6rem;padding:0.62rem 1.1rem;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.06);border-radius:8px;color:#22c55e;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;margin-bottom:1.5rem;}
+.open-badge::before{content:'';width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 1.8s infinite;}
+.contact-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;}
+.contact-box-title{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:1rem;}
+.contact-box p{font-size:0.86rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.75;}
+footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;font-family:'DM Mono',monospace;font-size:0.66rem;color:var(--muted);letter-spacing:0.05em;}
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+@media(max-width:768px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr;}
+  .hero-card{display:none;}
+  .projects-grid,.skills-grid{grid-template-columns:1fr;}
+  .project-card.featured{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .analytics-card{grid-template-columns:1fr 1fr;}
+  nav ul{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<nav>
+  <div class="inner">
+    <a href="#" class="nav-logo">VLK<span>.</span></a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:vijayak90@gmail.com" class="btn btn-primary" style="padding:0.58rem 1.1rem;font-size:0.7rem;">Hire Me</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Open to roles · Panathur–Bhoganahalli · Bangalore</div>
+        <h1>I build AI products<br>that <em>enterprises</em><br>can actually trust.</h1>
+        <p class="hero-sub"><strong>12+ years</strong> at Informatica, Alteryx & MSD — from enterprise support to architecting production AI systems. Building <strong>Connexa</strong>, a multi-agent AI support platform with security baked in from day one.</p>
+        <div class="btn-row">
+          <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+          <a href="mailto:vijayak90@gmail.com" class="btn btn-outline">Request Demo →</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="avatar">V</div>
+        <div class="card-name">Vijayalakshmikarthikeyan</div>
+        <div class="card-role">AI PRODUCT BUILDER · AI SAFETY<br>MDM ARCHITECT · CONVERSATIONAL AI</div>
+        <div class="status">Open to Work · Bangalore</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div><span class="stat-num">12+</span><span class="stat-label">Years Enterprise Experience</span></div>
+      <div><span class="stat-num">330+</span><span class="stat-label">Cases Resolved · Alteryx</span></div>
+      <div><span class="stat-num">3</span><span class="stat-label">Countries Worked In</span></div>
+      <div><span class="stat-num">#2</span><span class="stat-label">Global Innovation Day</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">What I've Built</div>
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card featured fade-up">
+        <div>
+          <div class="badge badge-blue">Flagship · Live Build</div>
+          <h3 class="project-title">Connexa — Multi-Agent AI Support Platform</h3>
+          <p class="project-problem">Enterprise AI support fails because it is reactive, insecure, and unaccountable. Connexa is a multi-agent customer support platform that rethinks this at the architecture level.</p>
+          <div class="project-impact">↳ Prompt injection defense · PII masking · Adversarial red-team testing · OWASP LLM Top 10 · Multi-agent orchestration</div>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Multi-Agent</span><span class="tag">AI Safety</span><span class="tag">LLM Security</span><span class="tag">n8n</span><span class="tag">Supabase</span><span class="tag">Claude API</span>
+          </div>
+          <a href="mailto:vijayak90@gmail.com?subject=Connexa Demo Request" class="btn-demo">Request Demo →</a>
+        </div>
+        <div class="project-visual">
+          <canvas id="connexaCanvas" width="280" height="200"></canvas>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="badge badge-green">Innovation Day · Global Runner-Up / 75 Teams</div>
+        <h3 class="project-title">Match Analysis Tool — Informatica</h3>
+        <p class="project-problem">Customers repeatedly raised support tickets for the same MDM configuration issues. No self-service diagnostic path existed.</p>
+        <div class="project-impact">↳ Automated environment scanning + knowledge-linked fix recommendations · Reduced match-related tickets by 50%</div>
+        <div class="tag-row"><span class="tag">Java</span><span class="tag">J2EE</span><span class="tag">JSON</span><span class="tag">MyBatis</span><span class="tag">MDM</span></div>
+        <a href="mailto:vijayak90@gmail.com?subject=Match Analysis Tool" class="btn-demo">Learn More →</a>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="badge badge-amber">Competition · 70% Accuracy</div>
+        <h3 class="project-title">Grab Computer Vision Challenge</h3>
+        <p class="project-problem">Vehicle image classification for Grab's Southeast Asian mobility platform using deep learning and classical computer vision.</p>
+        <div class="project-impact">↳ 70% classification accuracy · Python · OpenCV · TensorFlow · PyTorch</div>
+        <div class="tag-row"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Computer Vision</span></div>
+        <a href="mailto:vijayak90@gmail.com?subject=CV Project Discussion" class="btn-demo">Discuss →</a>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="badge badge-blue">Healthcare · Production · MSD Excellence Award</div>
+        <h3 class="project-title">MSD Japan — Healthcare MDM Architecture</h3>
+        <p class="project-problem">Merck-MSD needed a unified customer master across 10–12 fragmented data sources for Japan's commercial pharmaceutical operations.</p>
+        <div class="project-impact">↳ Architected identity resolution for millions of records · Greenfield build · Successfully deployed to production</div>
+        <div class="tag-row"><span class="tag">Informatica MDM</span><span class="tag">Data Architecture</span><span class="tag">Healthcare</span><span class="tag">Identity Resolution</span></div>
+        <a href="mailto:vijayak90@gmail.com?subject=MDM Architecture Discussion" class="btn-demo">Discuss →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Experience Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item fade-up">
+        <div class="tl-date">2024 – Present</div>
+        <div class="tl-role">AI Product Builder & Security Researcher</div>
+        <div class="tl-company">Independent · Bengaluru, India</div>
+        <ul class="tl-bullets">
+          <li>Building Connexa — multi-agent AI support platform with prompt injection defense and PII masking</li>
+          <li>AI safety research: OWASP LLM Top 10, MITRE ATLAS, adversarial red-team testing</li>
+          <li>AI Product Management (SMU) · Cybersecurity Strategy (ISB)</li>
+        </ul>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-date">Jan 2021 – Mar 2022</div>
+        <div class="tl-role">Senior Customer Support Engineer</div>
+        <div class="tl-company">Alteryx · Singapore · Promoted within 1 year</div>
+        <ul class="tl-bullets">
+          <li>Led APAC cross-regional technical escalations and product feedback</li>
+          <li>Cloud acquisition leadership — equipped support teams with newly merged cloud product</li>
+          <li>International KT: San Francisco & Las Vegas · Mentored junior engineers</li>
+          <li>Alteryx Xcellence Award · MVP Award</li>
+        </ul>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-date">Nov 2019 – Jan 2021</div>
+        <div class="tl-role">Customer Support Engineer</div>
+        <div class="tl-company">Alteryx · Singapore</div>
+        <ul class="tl-bullets">
+          <li>Resolved 330+ cases in Year 1 across Server, Designer, Connector, Database & Advanced Analytics</li>
+          <li>APAC SME for data connection architecture · Top CSAT scores</li>
+        </ul>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-date">Apr 2016 – Sep 2017</div>
+        <div class="tl-role">MDM Analyst — Data Architect</div>
+        <div class="tl-company">Merck–MSD · Singapore</div>
+        <ul class="tl-bullets">
+          <li>Architected Informatica MDM component for Healthcare Customer Master — went live in production</li>
+          <li>Unified 10–12 fragmented data sources into master record for MSD Japan commercial operations</li>
+          <li>MSD Excellence Award</li>
+        </ul>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-date">Jun 2012 – Jan 2016</div>
+        <div class="tl-role">Technical Support Engineer</div>
+        <div class="tl-company">Informatica · Bengaluru</div>
+        <ul class="tl-bullets">
+          <li>Built Match Analysis Tool — Innovation Day Global Runner-Up (75 teams, California)</li>
+          <li>Presented Informatica MDM v10 at Informatica World 2015, Las Vegas, to global customers</li>
+          <li>Knowledge workshops in Portugal, Greece & Austria · Mercury Team Player Award</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">AI & Machine Learning</div>
+        <div class="skill-pills">
+          <span class="pill">Conversational AI</span><span class="pill">Multi-Agent Systems</span><span class="pill">LLM Security</span><span class="pill">AI Safety & Trust</span><span class="pill">Prompt Engineering</span><span class="pill">Computer Vision</span><span class="pill">TensorFlow</span><span class="pill">PyTorch</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Data & Architecture</div>
+        <div class="skill-pills">
+          <span class="pill">Informatica MDM</span><span class="pill">Data Architecture</span><span class="pill">Identity Resolution</span><span class="pill">Big Data / Hadoop</span><span class="pill">SQL</span><span class="pill">Supabase</span><span class="pill">Python</span><span class="pill">Java / J2EE</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Product & Leadership</div>
+        <div class="skill-pills">
+          <span class="pill">Product Thinking</span><span class="pill">Customer Success</span><span class="pill">APAC Escalation Mgmt</span><span class="pill">Cloud Acquisition</span><span class="pill">Technical Documentation</span><span class="pill">OWASP LLM Top 10</span><span class="pill">n8n Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Transparency</div>
+    <h2 class="section-title">Portfolio Analytics</h2>
+    <div class="analytics-card fade-up">
+      <div><span class="an-num">—</span><span class="an-label">Unique Visitors</span></div>
+      <div><span class="an-num">—</span><span class="an-label">Page Views</span></div>
+      <div><span class="an-num">Projects</span><span class="an-label">Most Viewed Section</span></div>
+      <div class="an-note">
+        📊 Powered by Tinylytics (free, no cookies, GDPR compliant) · <strong style="color:var(--text);">To activate in 2 minutes:</strong> Go to tinylytics.app → Sign up free → Copy your Site ID → Open index.html → Find the comment in &lt;head&gt; → Uncomment that one line and replace YOUR_SITE_ID → Re-upload to GitHub. Done. You will then see live visitor counts, countries, and which sections get clicked.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="open-badge">Actively Interviewing · East Bangalore · Immediate Joiner</div>
+        <h3 class="contact-h">Let's build something<br><em style="font-style:italic;color:var(--accent)">enterprise-worthy.</em></h3>
+        <p class="contact-p">Targeting AI Product, AI Trust & Safety, Technical Product Manager, and Customer Success (AI) roles at product companies near the Panathur–Bhoganahalli corridor. Available immediately.</p>
+        <div class="contact-links">
+          <a href="mailto:vijayak90@gmail.com" class="clink"><span>EMAIL</span> vijayak90@gmail.com</a>
+          <a href="https://https://www.linkedin.com/in/vijayalakshmikarthikeyan/" class="clink" target="_blank"><span>LINKEDIN</span> https://www.linkedin.com/in/vijayalakshmikarthikeyan/</a>
+          <a href="https://https://github.com/vijayak90" class="clink" target="_blank"><span>GITHUB</span> https://github.com/vijayak90</a>
+        </div>
+      </div>
+      <div class="contact-box fade-up">
+        <div class="contact-box-title">QUICK CONNECT</div>
+        <p>Best way to reach me is a direct email with the role title in the subject line. I respond within 24 hours.</p>
+        <a href="mailto:vijayak90@gmail.com?subject=Opportunity for Vijayalakshmikarthikeyan" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:1rem;">Send Me a Message →</a>
+        <div style="font-family:'DM Mono',monospace;font-size:0.64rem;color:var(--muted);text-align:center;">AI Product · AI Safety · TPM · Customer Success AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Vijayalakshmikarthikeyan &nbsp;·&nbsp; Built on GitHub Pages &nbsp;·&nbsp; All project ideas, UI designs, code logic and concepts are proprietary and protected</p>
+  </div>
+</footer>
+
+<script>
+/* ANTI-COPY: right-click */
+document.addEventListener('contextmenu',function(e){e.preventDefault();return false;});
+/* ANTI-COPY: keyboard shortcuts */
+document.addEventListener('keydown',function(e){
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','s','S','a','A','p','P'].includes(e.key))||(e.ctrlKey&&e.shiftKey&&['I','i','J','j','C','c'].includes(e.key))){e.preventDefault();e.stopPropagation();return false;}
+});
+/* ANTI-COPY: drag */
+document.addEventListener('dragstart',function(e){e.preventDefault();});
+/* ANTI-COPY: devtools detection via timing (non-intrusive) */
+(function(){
+  var d=new Date();
+  debugger;
+  if(new Date()-d>100){
+    console.warn('%cPortfolio protected. All content © Vijayalakshmikarthikeyan','color:#3b9eff;font-size:14px;font-weight:bold;');
+  }
+})();
+
+/* CANVAS: Connexa node animation */
+(function(){
+  var c=document.getElementById('connexaCanvas');
+  if(!c)return;
+  var ctx=c.getContext('2d'),W=c.width,H=c.height,t=0;
+  var nodes=[
+    {x:140,y:95,label:'AI Core',r:26,col:'#3b9eff'},
+    {x:55,y:38,label:'Safety',r:19,col:'#00f5c4'},
+    {x:225,y:38,label:'PII Mask',r:19,col:'#00f5c4'},
+    {x:55,y:155,label:'Agents',r:19,col:'#f59e42'},
+    {x:225,y:155,label:'Memory',r:19,col:'#f59e42'},
+    {x:140,y:175,label:'Secure',r:15,col:'#a78bfa'}
+  ];
+  var edges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[3,4]];
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0a1220';ctx.fillRect(0,0,W,H);
+    edges.forEach(function(e){
+      var a=nodes[e[0]],b=nodes[e[1]],p=0.25+0.28*Math.sin(t*0.04+e[0]);
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle='rgba(59,158,255,'+p+')';ctx.lineWidth=1;ctx.stroke();
+    });
+    nodes.forEach(function(n,i){
+      var oy=Math.sin(t*0.03+i*0.9)*2.5;
+      var g=ctx.createRadialGradient(n.x,n.y+oy,0,n.x,n.y+oy,n.r*1.7);
+      g.addColorStop(0,n.col+'44');g.addColorStop(1,'transparent');
+      ctx.beginPath();ctx.arc(n.x,n.y+oy,n.r*1.7,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      ctx.beginPath();ctx.arc(n.x,n.y+oy,n.r,0,Math.PI*2);
+      ctx.fillStyle='#0d1320';ctx.strokeStyle=n.col;ctx.lineWidth=1.5;ctx.fill();ctx.stroke();
+      ctx.fillStyle=n.col;ctx.font='bold '+(n.r>20?'8':'7')+'px monospace';
+      ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(n.label,n.x,n.y+oy);
+    });
+    t++;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* SCROLL FADE */
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>

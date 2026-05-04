@@ -68,7 +68,7 @@ Output: PRD + product roadmap + 5 prioritised value propositions.
 
 | Period | Role | Company |
 |---|---|---|
-| Apr 2024 – Present | AI Product Builder & Researcher | Independent — Connexa |
+| Apr 2024 – Present | AI Product Builder & Researcher | Self-directed |
 | Apr 2022 – Mar 2024 | Principal Support Engineer — APAC | Alteryx, Singapore |
 | Jan 2021 – Mar 2022 | Senior Customer Support Engineer | Alteryx, Singapore |
 | Nov 2019 – Jan 2021 | Customer Support Engineer | Alteryx, Singapore |
